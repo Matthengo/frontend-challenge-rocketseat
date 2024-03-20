@@ -9,11 +9,7 @@ const sairaStencilOne = Saira_Stencil_One({
   weight: ['400']
 });
 
-interface HeaderProps {
-  
-}
-
-export const Header = (props: HeaderProps) => {
+export const Header = () => {
   return(
     <TagHeader>
       <Logo className={sairaStencilOne.className}>Capputeeno</Logo>
