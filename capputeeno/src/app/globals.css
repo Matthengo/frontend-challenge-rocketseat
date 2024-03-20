@@ -1,7 +1,8 @@
 :root {
   --border-radius: 12px;
   --logo-color: #5D5D6D;
-
+  --input-bg-color: #F3F5F6;
+  --color-dark-one: #737380;
 }
 
 * {
