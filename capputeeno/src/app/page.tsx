@@ -1,10 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+
+import { Main } from "@/components/Main.styled";
+import { FilterBar } from "@/components/FilterBar";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-
-    </main>
+    <Main>
+      <FilterBar />
+    </Main>
   );
 }
