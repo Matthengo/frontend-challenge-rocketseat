@@ -16,5 +16,8 @@ export const PriorityList = styled.div<PriorityListProps>`
   position: absolute;
   right: 0;
   box-shadow: 0px 4px 12px 0px #0000001A;
-  display: ${props => props.hidden ? 'none' : 'block'};
+  opacity: ${props => props.hidden ? '0' : '1'};
+  visibility: ${props => props.hidden ? 'hidden' : 'visible'};
+  transform: ${props => props.hidden ? 'translateY(-20px)' : 'translateY(0)'};
+  transition: all 0.3s ease-out;
 `
