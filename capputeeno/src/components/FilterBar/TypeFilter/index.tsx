@@ -3,7 +3,6 @@ import { FilterItem } from "./FilterItem.styled"
 import { FilterList } from "./FilterList.styled"
 import { FilterContext } from "@/context/FilterContext"
 import { FilterType } from "@/app/types/filterTypes"
-import { FilterItemBtn } from "./FIlterItemBtn.styled"
 
 export const TypeFilter = () => {
   const { type, setType } = useContext(FilterContext)
@@ -14,20 +13,14 @@ export const TypeFilter = () => {
   
   return(
     <FilterList>
-      <FilterItem selected={IS_ALL}>
-        <FilterItemBtn onClick={() => setType(FilterType.ALL)}>
+      <FilterItem selected={IS_ALL} onClick={() => setType(FilterType.ALL)}>
           Todos os produtos
-        </FilterItemBtn>
       </FilterItem>
-      <FilterItem selected={IS_TSHIRT}>
-        <FilterItemBtn onClick={() => setType(FilterType.TSHIRT)}>
+      <FilterItem selected={IS_TSHIRT} onClick={() => setType(FilterType.TSHIRT)}>
           Camisetas
-        </FilterItemBtn>
       </FilterItem>
-      <FilterItem selected={IS_MUG}>
-        <FilterItemBtn onClick={() => setType(FilterType.MUG)}>
+      <FilterItem selected={IS_MUG} onClick={() => setType(FilterType.MUG)}>
           Canecas
-        </FilterItemBtn>
       </FilterItem>
     </FilterList>
   )
