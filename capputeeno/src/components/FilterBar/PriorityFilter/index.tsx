@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { PriorityDropdownBtn } from "./PriorityDropdownBtn.styled";
 import { PriorityDropdownContent } from "./PriorityDropdownContent";
 import { PriorityDropdown } from "./PriorityDropdown.styled";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export const PriorityFilter = () => {
   const [displayContent, setDisplayContent] = useState(false) 
@@ -12,16 +12,20 @@ export const PriorityFilter = () => {
     setDisplayContent(!displayContent)
   }
   
+  const dropdownBtnRef = useRef<HTMLButtonElement>()
+
   return(
     <PriorityDropdown>
-      <PriorityDropdownBtn 
+      <PriorityDropdownBtn
+        ref={dropdownBtnRef}
         onClick={() => handleDisplayDropdownContent()}
         rotate={displayContent}
       >
         <p>Organizar por</p>
         <IoIosArrowDown size={16} />
       </PriorityDropdownBtn>
-      <PriorityDropdownContent 
+      <PriorityDropdownContent
+        dropdownBtnRef={dropdownBtnRef}
         isOpen={displayContent}
         setIsOpen={setDisplayContent} 
       />

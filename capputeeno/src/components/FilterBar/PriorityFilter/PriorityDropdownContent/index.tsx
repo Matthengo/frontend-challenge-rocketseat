@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { MutableRefObject, useContext, useEffect, useRef } from "react"
 import { PriorityItem } from "./PriorityItem.styled"
 import { PriorityList } from "./PriorityList.styled"
 import { FilterContext } from "@/context/FilterContext"
@@ -7,10 +7,11 @@ import { PriorityFilterType } from "@/app/types/filterTypes"
 interface PriorityDropdownContentProps {
   isOpen: boolean
   setIsOpen: Function
+  dropdownBtnRef: MutableRefObject<HTMLButtonElement | undefined>
 }
 
 export const PriorityDropdownContent = (
-  { isOpen, setIsOpen }: PriorityDropdownContentProps
+  { isOpen, setIsOpen, dropdownBtnRef }: PriorityDropdownContentProps
 ) => {
 
   const { setPriority } = useContext(FilterContext)
@@ -19,9 +20,28 @@ export const PriorityDropdownContent = (
     setIsOpen(false)
   }
 
+  const dropdownRef = useRef<HTMLDivElement>()
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if(dropdownBtnRef.current?.contains(event.target as Node)) {
+      return
+    }
+    if(!dropdownRef.current?.contains(event.target as Node)){
+      setIsOpen(false)
+      return
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  })
 
   return(
-    <PriorityList hidden={ !isOpen }>
+    <PriorityList hidden={ !isOpen } ref={dropdownRef}>
       <PriorityItem 
         onClick={() => handleUpdatePriority(PriorityFilterType.NEW)}
       >

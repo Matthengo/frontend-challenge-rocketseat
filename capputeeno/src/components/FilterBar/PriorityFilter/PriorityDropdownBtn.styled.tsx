@@ -1,7 +1,9 @@
+import { MutableRefObject } from "react";
 import styled from "styled-components";
 
 interface PriorityDropdownBtnProps {
   rotate: boolean;
+  ref: MutableRefObject<HTMLButtonElement | undefined>
 }
 
 export const PriorityDropdownBtn = styled.button<PriorityDropdownBtnProps>`

@@ -1,7 +1,9 @@
+import { MutableRefObject } from "react";
 import styled from "styled-components";
 
 interface PriorityListProps {
   hidden: boolean
+  ref: MutableRefObject<HTMLDivElement | undefined>
 }
 
 export const PriorityList = styled.div<PriorityListProps>`
