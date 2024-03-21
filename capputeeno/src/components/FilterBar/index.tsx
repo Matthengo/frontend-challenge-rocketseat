@@ -1,14 +1,13 @@
 "use client"
+import { FilterContainer } from "./FilterContainer.styled"
+import { PriorityFilter } from "./PriorityFilter"
 import { TypeFilter } from "./TypeFilter"
 
-interface FilterBarProps {
-  
-}
-
-export const FilterBar = (props: FilterBarProps) => {
+export const FilterBar = () => {
   return(
-    <div>
+    <FilterContainer>
       <TypeFilter />
-    </div>
+      <PriorityFilter />
+    </FilterContainer>
   )
 }

@@ -3,3 +3,10 @@ export enum FilterType {
   'TSHIRT',
   'MUG',
 }
+
+export enum PriorityFilterType {
+  'NEW',
+  'LOWESTPRICE',
+  'HIGHTESTPRICE',
+  'BESTSELLERS'
+}
