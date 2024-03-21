@@ -4,7 +4,7 @@ export const CartCount = styled.div`
   display: inline-block;
   width: 17px;
   height: 17px;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 500;
   line-height: 17px;
   text-align: center;
