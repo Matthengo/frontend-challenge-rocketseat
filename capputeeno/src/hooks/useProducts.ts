@@ -5,11 +5,11 @@ import { useContext } from "react"
 
 
 export const useProducts = () => {
-  const { type } = useContext(FilterContext)
+  const { type, priority } = useContext(FilterContext)
   
   const { data } = useQuery({
-    queryFn: () => getProducts({ type }),
-    queryKey: ['products', type]
+    queryFn: () => getProducts({ type, priority }),
+    queryKey: ['products', type, priority]
   })
 
   return {
