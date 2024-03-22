@@ -2,7 +2,7 @@ import { MutableRefObject, useContext, useEffect, useRef } from "react"
 import { PriorityItem } from "./PriorityItem.styled"
 import { PriorityList } from "./PriorityList.styled"
 import { FilterContext } from "@/context/FilterContext"
-import { PriorityFilterType } from "@/app/types/filterTypes"
+import { PriorityFilterType } from "@/types/filterTypes"
 
 interface PriorityDropdownContentProps {
   isOpen: boolean

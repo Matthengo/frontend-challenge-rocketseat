@@ -1,5 +1,5 @@
 "use client"
-import { FilterType, PriorityFilterType } from "@/app/types/filterTypes";
+import { FilterType, PriorityFilterType } from "@/types/filterTypes";
 import { ReactNode, createContext, useState } from "react";
 
 export const FilterContext = createContext({

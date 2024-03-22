@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { FilterItem } from "./FilterItem.styled"
 import { FilterList } from "./FilterList.styled"
 import { FilterContext } from "@/context/FilterContext"
-import { FilterType } from "@/app/types/filterTypes"
+import { FilterType } from "@/types/filterTypes"
 
 export const TypeFilter = () => {
   const { type, setType } = useContext(FilterContext)

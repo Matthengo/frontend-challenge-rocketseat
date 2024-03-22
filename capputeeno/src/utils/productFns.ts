@@ -1,4 +1,4 @@
-import { FilterType, PriorityFilterType } from "@/app/types/filterTypes";
+import { FilterType, PriorityFilterType } from "@/types/filterTypes";
 
 export const getProductsByCategory = (type: FilterType) => {
   if (type === FilterType.ALL) return ''

@@ -1,5 +1,5 @@
-import { FilterType, PriorityFilterType } from "@/app/types/filterTypes"
-import { ProductsAPIResponse } from "@/app/types/productsResponse"
+import { FilterType, PriorityFilterType } from "@/types/filterTypes"
+import { ProductsAPIResponse } from "@/types/productsResponse"
 import { getProductsByCategory, getProductsByPriority } from "@/utils/productFns"
 import axios, { AxiosPromise } from "axios"
 
