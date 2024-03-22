@@ -4,9 +4,11 @@
   --input-bg-color: #F3F5F6;
   --color-dark-one: #737380;
   --color-dark-two: #41414D;
+  --color-dark-three: #09090A;
   --color-red-one: #DE3838;
   --page-bg-color: #F0F0F5;
   --color-orange-one: #FFA585;
+  --color-gray-one: #DCE2E5;
 }
 
 * {
