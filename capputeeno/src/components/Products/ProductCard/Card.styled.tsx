@@ -1,3 +1,4 @@
+import { mediaQueries } from "@/utils/mediaQueries";
 import styled from "styled-components";
 
 export const Card = styled.div`
@@ -10,8 +11,8 @@ export const Card = styled.div`
   overflow: hidden;
 
   img {
-    width: 256px;
-    height: 300px;
+    width: 146px;
+    height: 200px;
     object-fit: cover;
     
   }
@@ -39,6 +40,13 @@ export const Card = styled.div`
       width: 100%;
       background: var(--color-gray-one);
       margin: 8px 0px;
+    }
+  }
+
+  @media ${mediaQueries.md} {
+    img {
+      width: 256px;
+      height: 300px; 
     }
   }
 
