@@ -1,7 +1,8 @@
+import { mediaQueries } from "@/utils/mediaQueries";
 import styled from "styled-components";
 
 export const InputContainer = styled.div`
-  width: 352px;
+  width: 100%;
   position: relative;
 
   svg {
@@ -10,5 +11,9 @@ export const InputContainer = styled.div`
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  @media ${mediaQueries.md} {
+    width: 352px
   }
 `
