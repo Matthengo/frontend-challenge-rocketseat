@@ -1,7 +1,7 @@
 import { mediaQueries } from "@/utils/mediaQueries";
 import styled from "styled-components";
 
-export const Main = styled.main`
+export const HomeMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
