@@ -4,13 +4,13 @@ import { ReactNode, createContext, useState } from "react";
 
 export const FilterContext = createContext({
   search: '',
-  page: 1,
+  page: 0,
   type: FilterType.ALL,
   priority: PriorityFilterType.NEW,
   setSearch: (value: string) => {},
   setPage: (value: number) => {},
   setType: (value: FilterType) => {},
-  setPriority: (value: PriorityFilterType) => {}
+  setPriority: (value: PriorityFilterType) => {},
 })
 
 interface ProviderProps {
@@ -19,7 +19,7 @@ interface ProviderProps {
 
 export function FilterContextProvider({ children }: ProviderProps){
   const [search, setSearch] = useState('')
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
   const [type, setType] = useState(FilterType.ALL)
   const [priority, setPriority] = useState(PriorityFilterType.NEW)
 

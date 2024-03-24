@@ -5,12 +5,12 @@ import { useContext, useDeferredValue } from "react"
 
 
 export const useProducts = () => {
-  const { type, priority, search } = useContext(FilterContext)
+  const { type, priority, search, page } = useContext(FilterContext)
   const searchDeferred = useDeferredValue(search)
 
   const { data } = useQuery({
-    queryFn: () => getProducts({ type, priority }),
-    queryKey: ['products', type, priority]
+    queryFn: () => getProducts({ type, priority, page }),
+    queryKey: ['products', type, priority, page]
   })
 
   const allProducts = data?.data?.data.allProducts
