@@ -7,6 +7,7 @@ export const List = styled.div`
   grid-gap: 8px;
   max-width: 100%;
   margin-top: 32px;
+  margin-bottom: 74px;
 
   @media ${mediaQueries.md} {
     grid-template-columns: repeat(auto-fill, 256px);
