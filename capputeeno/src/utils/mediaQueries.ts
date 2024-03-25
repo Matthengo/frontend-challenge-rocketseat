@@ -3,4 +3,5 @@ export const mediaQueries = {
   md: '(min-width: 768px)',
   lg: '(min-width: 1024px)',
   xl: '(min-width: 1280px)',
+  xl2: '(min-width: 1536px)'
 }

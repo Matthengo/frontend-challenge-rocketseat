@@ -11,4 +11,5 @@ export const ProductDetailsBtn = styled.button`
     color: #F5F5FA;
     padding: 10px 0;
     border-radius: 4px;
+    gap: 8px
 `

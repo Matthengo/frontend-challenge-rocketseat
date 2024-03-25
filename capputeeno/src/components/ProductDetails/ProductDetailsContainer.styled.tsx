@@ -1,14 +1,17 @@
+import { mediaQueries } from "@/utils/mediaQueries";
 import styled from "styled-components";
 
 export const ProductDetailsContainer = styled.section`
+  margin-top: 12px;
   display: flex;
+  justify-content: center;
   width: 100%;
-  gap: 32px;
+  gap: 12px;
   color: var(--color-dark-two);
+  flex-direction: column;
 
   img {
-    width: 50%;
-    max-width: 640px;
+    width: 100%;
   }
 
   p.category {
@@ -53,11 +56,22 @@ export const ProductDetailsContainer = styled.section`
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 21px;
+    margin-bottom: 12px;
   }
 
   > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  @media ${mediaQueries.lg} {
+    flex-direction: row;
+    gap: 32px;
+    
+    img {
+      width: 50%;
+      max-width: 840px;
+    }
   }
 `
