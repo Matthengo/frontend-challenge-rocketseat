@@ -1,14 +1,16 @@
 import { mediaQueries } from "@/utils/mediaQueries";
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.button`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   border-radius: 8px;
   background-color: #FFFFFF66;
   overflow: hidden;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 
   img {
     width: 146px;
@@ -18,6 +20,9 @@ export const Card = styled.div`
   }
 
   div.info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     padding: 8px 12px;
     width: 100%;
 
