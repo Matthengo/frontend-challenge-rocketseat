@@ -1,6 +1,7 @@
 import { FiShoppingBag } from "react-icons/fi"
 import { ProductDetailsBtn } from "./ProductDetailsBtn.styled"
 import { ProductDetailsContainer } from "./ProductDetailsContainer.styled"
+import { centsToReais } from '@/utils/functions'
 
 interface ProductDetailsProps {
   category: string | undefined
@@ -10,15 +11,7 @@ interface ProductDetailsProps {
   image: string | undefined
 }
 
-export const ProductDetails = (props: ProductDetailsProps) => {
-  const centsToReais = (cents: number) => {
-    const reais = cents / 100
-    return reais.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    })
-  }
-  
+export const ProductDetails = (props: ProductDetailsProps) => { 
   return(
     <ProductDetailsContainer>
       <img src={props.image} alt={props.title} />

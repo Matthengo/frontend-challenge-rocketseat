@@ -1,4 +1,5 @@
 import { Card } from "./Card.styled"
+import { centsToReais } from '@/utils/functions'
 
 interface ProductProps {
   image: string
@@ -7,14 +8,6 @@ interface ProductProps {
 }
 
 export const ProductCard = (props: ProductProps) => {
-  const centsToReais = (cents: number) => {
-    const reais = cents / 100
-    return reais.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    })
-  }
-  
   return(
     <Card>
       <img src={props.image} alt={props.title} />
