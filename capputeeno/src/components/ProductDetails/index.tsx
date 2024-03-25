@@ -2,6 +2,9 @@ import { FiShoppingBag } from "react-icons/fi"
 import { ProductDetailsBtn } from "./ProductDetailsBtn.styled"
 import { ProductDetailsContainer } from "./ProductDetailsContainer.styled"
 import { centsToReais } from '@/utils/functions'
+import { useLocalStorage } from "@/hooks/useLocalStorage"
+import { SHOPPING_CART } from "@/utils/localStorage"
+import { LocalStorageProduct } from "@/types/localStorageProduct"
 
 interface ProductDetailsProps {
   category: string | undefined
@@ -9,9 +12,32 @@ interface ProductDetailsProps {
   price: number | undefined
   description: string | undefined
   image: string | undefined
+  id: string | undefined
 }
 
 export const ProductDetails = (props: ProductDetailsProps) => { 
+  const { value, updateLocalStorage } = useLocalStorage(SHOPPING_CART)
+  
+  const addToLocalStorage = () => {
+    const foundItem = value.find(
+      (product: { id: string }) => product.id === props.id 
+    )
+    
+    if(foundItem){
+      const newValue = value.map((product: LocalStorageProduct) => {
+        if(product.id === props.id) return { ...product, quantity: product.quantity + 1 }
+        return product
+      })
+      
+      updateLocalStorage(newValue)
+      return
+    }
+    
+    value.push({ ...props, quantity: 1 })
+
+    updateLocalStorage(value)
+  }
+
   return(
     <ProductDetailsContainer>
       <img src={props.image} alt={props.title} />
@@ -24,7 +50,7 @@ export const ProductDetails = (props: ProductDetailsProps) => {
           <p className="description-title">Descrição</p>
           <p className="description-text">{props.description}</p>
         </div>
-        <ProductDetailsBtn>
+        <ProductDetailsBtn onClick={() => addToLocalStorage()}>
           <FiShoppingBag size={24} color="#F5F5FA" />
           Adicionar ao Carrinho
         </ProductDetailsBtn>

@@ -6,11 +6,12 @@ import { useProduct } from "@/hooks/useProduct";
 
 export default function Product({ params }: { params: { slug: string } }) {
   const { data } = useProduct({ id: params.slug })
-  console.log(data);
+
   return(
     <ProductMain>
       <GoBackBtn />
       <ProductDetails
+        id={data?.id}
         title={data?.name}
         category={data?.category}
         image={data?.image_url}
