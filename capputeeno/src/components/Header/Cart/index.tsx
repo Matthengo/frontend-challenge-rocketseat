@@ -10,7 +10,7 @@ export const Cart = () => {
     <CartContainer>
       <FiShoppingBag size={24} color="#737380" />
       {
-        value.length &&
+        value.length > 0 &&
         <CartCount>{ value.length }</CartCount>
       }
     </CartContainer>
