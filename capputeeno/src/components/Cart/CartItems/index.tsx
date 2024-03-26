@@ -16,12 +16,18 @@ export const CartItems = () => {
     updateLocalStorage(newValue)
   }
 
+  const renderTotalPrice = () => {
+    const totalValue = value.reduce((acc, { price }) => acc + (price ?? 0), 0)
+    return totalValue
+  }
+
   return(
     <CartItemsContainer>
       <h3 className="title">Seu Carrinho</h3>
       <div className="total">
         <span>Total ({value.length} produtos)</span>
-        <span className="value">{centsToReais(0)}</span>
+        <span>{' '}</span>
+        <span className="value">{centsToReais(renderTotalPrice())}</span>
       </div>
       {
         value.map((product) => (
