@@ -1,9 +1,9 @@
 export interface LocalStorageProduct {
-  category: string
-  title: string
-  price: number
-  description: string
-  image: string
-  id: string
-  quantity: number
+  category?: string | undefined
+  title: string | undefined
+  price: number | undefined
+  description: string | undefined
+  image: string | undefined
+  id: string | undefined
+  quantity: number | undefined
 }

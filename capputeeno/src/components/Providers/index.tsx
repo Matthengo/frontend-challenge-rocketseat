@@ -1,4 +1,5 @@
 "use client"
+import { CartContextProvider } from "@/context/CartContext"
 import { FilterContextProvider } from "@/context/FilterContext"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactNode } from "react"
@@ -12,7 +13,9 @@ export const Providers = ({ children }: ProvidersProps) => {
   return(
     <QueryClientProvider client={client}>
       <FilterContextProvider>
+      <CartContextProvider>
         {children}
+      </CartContextProvider>
       </FilterContextProvider>
     </QueryClientProvider>
   )

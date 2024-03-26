@@ -20,12 +20,12 @@ export const ProductDetails = (props: ProductDetailsProps) => {
   
   const addToLocalStorage = () => {
     const foundItem = value.find(
-      (product: { id: string }) => product.id === props.id 
+      (product: LocalStorageProduct) => product.id === props.id 
     )
     
     if(foundItem){
       const newValue = value.map((product: LocalStorageProduct) => {
-        if(product.id === props.id) return { ...product, quantity: product.quantity + 1 }
+        if(product.id === props.id) return { ...product, quantity: Number(product.quantity) + 1 }
         return product
       })
       
@@ -35,7 +35,7 @@ export const ProductDetails = (props: ProductDetailsProps) => {
     
     value.push({ ...props, quantity: 1 })
 
-    updateLocalStorage(value)
+    updateLocalStorage([...value])
   }
 
   return(

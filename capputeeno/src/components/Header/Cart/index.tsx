@@ -2,9 +2,11 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { FiShoppingBag } from "react-icons/fi";
 import { CartCount } from "./CartCount.styled";
 import { CartContainer } from "./CartContainer.styled";
+import { SHOPPING_CART } from "@/utils/localStorage";
+import { useEffect } from "react";
 
 export const Cart = () => {
-  const { value } = useLocalStorage('shopping-cart')
+  const { value } = useLocalStorage(SHOPPING_CART)
 
   return(
     <CartContainer>
