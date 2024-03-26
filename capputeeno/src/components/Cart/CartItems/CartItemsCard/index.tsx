@@ -1,16 +1,23 @@
 import { Card } from "./Card.styled"
 import { FaRegTrashCan } from "react-icons/fa6";
 import { centsToReais } from '../../../../utils/functions';
+import { ChangeEvent } from "react";
 
 interface CartItemsCardProps {
+  id: string | undefined
   title: string | undefined
   image: string | undefined
   description: string | undefined
   quantity: number | undefined
   price: number | undefined
+  handleUpdateQuantity: (id: string, quantity: number) => void 
 }
 
 export const CartItemsCard = (props: CartItemsCardProps) => {
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    props.handleUpdateQuantity(props.id ?? '', Number(e.target.value))
+  }
+  
   return(
     <Card>
       <img src={props.image} alt={props.title} />
@@ -23,7 +30,7 @@ export const CartItemsCard = (props: CartItemsCardProps) => {
           <p className="description">{props.description}</p>
         </div>
         <div className="footer">
-          <select name="quantity">
+          <select value={props.quantity} onChange={(e) => handleChange(e)} >
             {
               Array
                 .from({ length: 10 }, (_, index) => index + 1)
