@@ -1,16 +1,21 @@
 import styled from "styled-components";
+import { mediaQueries } from '@/utils/mediaQueries';
 
 export const CartInfoContainer = styled.section`
   margin-top: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 33%;
+  width: 100%;
   max-width: 552px;
   height: 700px;
   background: white;
   color: var(--color-dark-two);
   padding: 16px 24px;
+
+  @media ${mediaQueries.md} {
+    width: 33%;
+  }
 
   div.top-content {
     display: flex;
