@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const CartItemsContainer = styled.section`
+  width: 67%;
+  max-width: 1224px;
   display: flex;
   flex-direction: column;
   gap: 16px;

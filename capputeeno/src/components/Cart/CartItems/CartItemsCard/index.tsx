@@ -10,7 +10,8 @@ interface CartItemsCardProps {
   description: string | undefined
   quantity: number | undefined
   price: number | undefined
-  handleUpdateQuantity: (id: string, quantity: number) => void 
+  handleUpdateQuantity: (id: string, quantity: number) => void
+  handleDeleteItem: (id: string) => void
 }
 
 export const CartItemsCard = (props: CartItemsCardProps) => {
@@ -18,6 +19,10 @@ export const CartItemsCard = (props: CartItemsCardProps) => {
     props.handleUpdateQuantity(props.id ?? '', Number(e.target.value))
   }
   
+  const handleClick = () => {
+    props.handleDeleteItem(props.id ?? '')
+  }
+
   return(
     <Card>
       <img src={props.image} alt={props.title} />
@@ -25,7 +30,9 @@ export const CartItemsCard = (props: CartItemsCardProps) => {
         <div>
           <div>
             <h1>{props.title}</h1>
-            <FaRegTrashCan size={24} />
+            <button onClick={() => handleClick()}>
+              <FaRegTrashCan size={24} />
+            </button>
           </div>
           <p className="description">{props.description}</p>
         </div>

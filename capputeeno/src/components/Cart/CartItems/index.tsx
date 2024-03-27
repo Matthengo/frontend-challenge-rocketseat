@@ -8,7 +8,11 @@ export const CartItems = () => {
   
   const handleUpdateQuantity = (id: string, quantity: number) => {
     const newValue = value.map((product) => {
-      if(product.id === id) return { ...product, quantity }
+      if(product.id === id) {
+        const totalPrice = Number(product.unitPrice) * quantity
+        return { ...product, quantity, totalPrice }
+      }
+      
       return product
     })
 
@@ -16,8 +20,14 @@ export const CartItems = () => {
   }
 
   const renderTotalPrice = () => {
-    const totalValue = value.reduce((acc, { price }) => acc + (price ?? 0), 0)
+    const totalValue = value.reduce((acc, { totalPrice }) => acc + (totalPrice ?? 0), 0)
     return totalValue
+  }
+
+  const deleteItem = (id: string) => {
+    const filter = value.filter((product) => product.id !== id)
+
+    updateLocalStorage(filter)
   }
 
   return(
@@ -36,9 +46,10 @@ export const CartItems = () => {
             title={product.title}
             image={product.image}
             description={product.description}
-            price={product.price}
+            price={product.totalPrice}
             quantity={product.quantity}
             handleUpdateQuantity={handleUpdateQuantity}
+            handleDeleteItem={deleteItem}
           />
         ))
       }

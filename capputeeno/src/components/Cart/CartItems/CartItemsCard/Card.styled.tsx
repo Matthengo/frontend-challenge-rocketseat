@@ -37,8 +37,12 @@ export const Card = styled.div`
           line-height: 30px;
         }
         
-        svg {
-          color: var(--color-red-one)
+        button {
+          border: none;
+          background-color: transparent;
+          color: var(--color-red-one);
+          cursor: pointer;
+          
         }
       }
     }

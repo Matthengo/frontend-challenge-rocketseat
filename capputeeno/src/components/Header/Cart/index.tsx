@@ -12,11 +12,11 @@ export const Cart = () => {
     <CartContainer>
       <button onClick={() => router.push('/cart')}>
         <FiShoppingBag size={24} color="#737380" />
-      </button>
       {
         value.length > 0 &&
         <CartCount>{ value.length }</CartCount>
       }
+      </button>
     </CartContainer>
   )
 }

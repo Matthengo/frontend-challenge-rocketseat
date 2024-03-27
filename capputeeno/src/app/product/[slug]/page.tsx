@@ -15,7 +15,7 @@ export default function Product({ params }: { params: { slug: string } }) {
         title={data?.name}
         category={data?.category}
         image={data?.image_url}
-        price={data?.price_in_cents}
+        unitPrice={data?.price_in_cents}
         description={data?.description}
       />
     </ProductMain>
