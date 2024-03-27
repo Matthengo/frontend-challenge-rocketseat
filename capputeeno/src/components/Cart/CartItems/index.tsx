@@ -1,11 +1,10 @@
 import { useLocalStorage } from "@/hooks/useLocalStorage"
 import { CartItemsContainer } from "./CartItemsContainer.styled"
-import { SHOPPING_CART } from "@/utils/localStorage"
 import { centsToReais } from "@/utils/functions"
 import { CartItemsCard } from "./CartItemsCard"
 
 export const CartItems = () => {
-  const { value, updateLocalStorage } = useLocalStorage(SHOPPING_CART)
+  const { value, updateLocalStorage } = useLocalStorage()
   
   const handleUpdateQuantity = (id: string, quantity: number) => {
     const newValue = value.map((product) => {

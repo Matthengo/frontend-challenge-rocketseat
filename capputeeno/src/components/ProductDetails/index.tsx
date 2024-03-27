@@ -16,7 +16,7 @@ interface ProductDetailsProps {
 }
 
 export const ProductDetails = (props: ProductDetailsProps) => { 
-  const { value, updateLocalStorage } = useLocalStorage(SHOPPING_CART)
+  const { value, updateLocalStorage } = useLocalStorage()
   
   const addToLocalStorage = () => {
     const foundItem = value.find(
